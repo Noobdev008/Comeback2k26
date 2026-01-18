@@ -6,7 +6,7 @@ for(let i =0; i<arr.length; i++){
             max=arr[i]
         }
 }
-console.log(max);
+// console.log(max);
 
 let min = arr[0]
 for(let i =0; i<arr.length; i++){
@@ -15,7 +15,7 @@ for(let i =0; i<arr.length; i++){
         }
 }
 
-console.log(min);
+// console.log(min);
 
 
 /// sorting via loop decendng
@@ -30,7 +30,7 @@ for(let i=0; i<arr.length; i++){
     }
 }
 
-console.log(arr);
+// console.log(arr);
 
 /// sorting via loop accending
 for(let i=0; i<arr.length; i++){
@@ -43,4 +43,75 @@ for(let i=0; i<arr.length; i++){
     }
 }
 
-console.log(arr);
+// console.log(arr);
+
+
+
+// var , let and const '
+// var is function scope
+
+var x= 1
+
+function functionScopeVar(){
+    console.log(x)
+}
+
+// functionScopeVar()
+
+function functionScopeVar_1(){
+    var y =1
+    // console.log(y);
+    
+}
+
+functionScopeVar_1()
+// console.log(y);   
+
+function blockScope(){
+    let z= 1
+    const r = 2
+    console.log(z,r);
+    
+}
+
+// console.log(z,r)
+// blockScope()
+
+// note ---> If a variable is declared inside a function, it is never accessible outside — keyword does not matter.
+
+// JavaScript creates scope in only TWO ways:
+
+// Function scope
+
+// Block scope (for let / const)
+
+// Declaration Location	var	let	const
+// Inside function| |(Function scoped)|	(Function scoped)|	(Function scoped)
+// Inside block {}|	(❌ Block ignored)|	(Block scoped)|	(Block scoped)
+// Outside all functions|	(Global)|	(Global)|	(Global)
+
+
+// 1. Arithmetic Operators
+
+// Used to perform mathematical calculations.
+
+// Operators
+// +   -   *   /   %   **   ++   --
+
+
+/* 2. Comparison Operators
+
+Used to compare two values and return a boolean (true or false).
+
+Operators
+==   ===   !=   !==   >   <   >=   <=
+ */
+
+/*
+3. Logical Operators
+
+Used to combine or invert boolean values.
+
+Operators
+&&   ||   !
+ */
