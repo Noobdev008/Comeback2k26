@@ -115,3 +115,15 @@ Used to combine or invert boolean values.
 Operators
 &&   ||   !
  */
+
+ //  swap numebers 
+let a =1
+let b= 2
+let temp;
+
+// temp = a
+// a =b 
+// b= temp
+
+[a,b]=[b,a]
+// console.log(a,b)
