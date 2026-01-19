@@ -84,3 +84,45 @@ function findMinNum(arr){
 | Use case          | Transform | Select  | Aggregate   |
 */
 
+// // Below are High-Quality Higher-Order Function (HOF)
+// //  practice questions, arranged from easy → medium → hard, exactly in the style used in JavaScript interviews.
+
+// // Q1. Double the Numbers
+// let nums = [1, 2, 3, 4];
+
+
+// // 👉 Use map() to return:
+
+// // [2, 4, 6, 8]
+
+// let output = nums.map(x=>x*2)
+// console.log(output)
+
+// // Q2. Get Only Even Numbers
+// let arr_1 = [10, 15, 20, 25, 30];
+
+
+// // 👉 Use filter() to return:
+
+// let outputFilter = arr_1.filter(x=>x%2===0)
+// console.log(outputFilter);
+
+// // [10, 20, 30]
+
+
+// // Q3. Sum of All Numbers
+// let sumarr = [5, 10, 15];
+
+
+// // 👉 Use reduce() to return:
+
+// let outptReduce = sumarr.reduce((sum,curr)=>{
+//     return sum+=curr
+// },0)
+
+// console.log(outptReduce);
+
+// // 30
+
+
+
