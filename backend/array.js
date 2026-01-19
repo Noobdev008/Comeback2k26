@@ -60,7 +60,7 @@ function findMaxNum(arr){
     return max
 }
 
-console.log(findMaxNum(arr));
+// console.log(findMaxNum(arr));
 
 function findMinNum(arr){
     let min = arr[0]
@@ -70,4 +70,17 @@ function findMinNum(arr){
     return min
 }
 
-console.log(findMinNum(arr));
+// console.log(findMinNum(arr));
+
+
+// other concept of HOF 
+/*
+| Feature           | map       | filter  | reduce      |
+| ----------------- | --------- | ------- | ----------- |
+| Returns new array | ✅         | ✅       | ❌           |
+| Output size       | Same      | ≤ input | Any         |
+| Callback returns  | New value | Boolean | Accumulator |
+| Mutates original  | ❌         | ❌       | ❌           |
+| Use case          | Transform | Select  | Aggregate   |
+*/
+
