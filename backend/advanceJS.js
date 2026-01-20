@@ -88,3 +88,61 @@ counter.increment(); // 1
 counter.increment(); // 2
 counter.decrement(); // 1
 counter.reset();     // 0
+
+
+
+function createUser(name){
+
+    return{
+        getName(){
+        return (name);
+        }
+    }
+}
+
+const user = createUser("Shubham");
+
+console.log(user.getName()); // Shubham
+console.log(user.name);      // undefined
+
+
+// 2️⃣ Callback – Sample Questions
+// Q3. Simple Callback Execution
+
+// Write a function processNumber(num, callback) that:
+
+// Doubles the number
+
+// Passes the result to the callback
+
+// Expected usage:
+
+function processNumber(num, callback){
+        callback(num*2)
+}
+
+processNumber(5, (result) => {
+  console.log(result); // 10
+});
+
+// Write a function fetchData(isSuccess, onSuccess, onError):
+
+// If isSuccess is true, call onSuccess
+
+// Otherwise, call onError
+
+// Expected usage:
+
+function fetchData(isSuccess, onSuccess, onError){
+    if(isSuccess){
+        onSuccess()
+    }else{
+        onError()
+    }
+}
+
+fetchData(
+  false,
+  () => console.log("Data loaded"),
+  () => console.log("Error occurred")
+);
