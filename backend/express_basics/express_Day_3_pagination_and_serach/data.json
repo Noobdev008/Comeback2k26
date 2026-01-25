@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "email": "rahul@gmail.com",
+    "age": 28,
+    "city": "Delhi",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Neha Verma",
+    "email": "neha@gmail.com",
+    "age": 32,
+    "city": "Mumbai",
+    "role": "admin",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Amit Singh",
+    "email": "amit@gmail.com",
+    "age": 25,
+    "city": "Pune",
+    "role": "user",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "name": "Pooja Patel",
+    "email": "pooja@gmail.com",
+    "age": 29,
+    "city": "Ahmedabad",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "Suresh Kumar",
+    "email": "suresh@gmail.com",
+    "age": 35,
+    "city": "Bangalore",
+    "role": "manager",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "name": "Anjali Mehta",
+    "email": "anjali@gmail.com",
+    "age": 26,
+    "city": "Jaipur",
+    "role": "user",
+    "isActive": false
+  },
+  {
+    "id": 7,
+    "name": "Rohit Yadav",
+    "email": "rohit@gmail.com",
+    "age": 31,
+    "city": "Noida",
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "Kiran Joshi",
+    "email": "kiran@gmail.com",
+    "age": 24,
+    "city": "Indore",
+    "role": "intern",
+    "isActive": true
+  }
+]
