@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "email": "rahul@gmail.com",
+    "age": 28,
+    "role": "user",
+    "city": "Delhi",
+    "isActive": true,
+    "token": "user-token-123"
+  },
+  {
+    "id": 2,
+    "name": "Neha Verma",
+    "email": "neha@gmail.com",
+    "age": 32,
+    "role": "admin",
+    "city": "Mumbai",
+    "isActive": true,
+    "token": "admin-token-456"
+  },
+  {
+    "id": 3,
+    "name": "Amit Singh",
+    "email": "amit@gmail.com",
+    "age": 25,
+    "role": "user",
+    "city": "Pune",
+    "isActive": false,
+    "token": "user-token-789"
+  },
+  {
+    "id": 4,
+    "name": "Pooja Patel",
+    "email": "pooja@gmail.com",
+    "age": 29,
+    "role": "manager",
+    "city": "Ahmedabad",
+    "isActive": true,
+    "token": "manager-token-111"
+  },
+  {
+    "id": 5,
+    "name": "Suresh Kumar",
+    "email": "suresh@gmail.com",
+    "age": 35,
+    "role": "admin",
+    "city": "Bangalore",
+    "isActive": false,
+    "token": "admin-token-222"
+  },
+  {
+    "id": 6,
+    "name": "Anjali Mehta",
+    "email": "anjali@gmail.com",
+    "age": 26,
+    "role": "user",
+    "city": "Jaipur",
+    "isActive": true,
+    "token": "user-token-333"
+  },
+  {
+    "id": 7,
+    "name": "Rohit Yadav",
+    "email": "rohit@gmail.com",
+    "age": 31,
+    "role": "user",
+    "city": "Noida",
+    "isActive": true,
+    "token": "user-token-444"
+  },
+  {
+    "id": 8,
+    "name": "Kiran Joshi",
+    "email": "kiran@gmail.com",
+    "age": 24,
+    "role": "intern",
+    "city": "Indore",
+    "isActive": false,
+    "token": "intern-token-555"
+  }
+]
