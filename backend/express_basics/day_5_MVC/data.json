@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Sharma",
+    "email": "rahul@gmail.com",
+    "age": 28,
+    "role": "user",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Neha Verma",
+    "email": "neha@gmail.com",
+    "age": 32,
+    "role": "admin",
+    "isActive": true
+  }
+]
