@@ -13,4 +13,4 @@ app.use('/api',authRoutes)
 app.listen(PORT,()=>{
     console.log(`Server runs on ${PORT}`);
     
-})
+});
