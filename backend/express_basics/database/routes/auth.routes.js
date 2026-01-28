@@ -16,5 +16,9 @@ router.post("/update/:id", updateUser);
 // delete api
 router.delete("/delete/:id", deleteUser);
 
+// serach and pagnation api
+router.get("/search", findAll);
+
+
 
 module.exports = router;

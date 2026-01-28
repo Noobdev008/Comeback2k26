@@ -146,4 +146,20 @@ const deleteUser =  async(req,res)=>{
     }
 }
 
+const searchUser = async(req,res)=>{
+    try{
+        
+         const findUserDetails = await User.find({},"name email role");
+        return res.status(200).json({
+            message: "User Details fetch successfully",
+            output:findUserDetails
+        });
+    }catch(err){
+         console.error(err.message);
+        return res.status(500).json({
+            message: "Internal Server Error"
+        });
+    }
+}
+
 module.exports = { addUser,findOne,findAll,updateUser,deleteUser };
