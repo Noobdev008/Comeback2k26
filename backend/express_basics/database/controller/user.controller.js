@@ -146,20 +146,66 @@ const deleteUser =  async(req,res)=>{
     }
 }
 
-const searchUser = async(req,res)=>{
-    try{
-        
-         const findUserDetails = await User.find({},"name email role");
-        return res.status(200).json({
-            message: "User Details fetch successfully",
-            output:findUserDetails
-        });
-    }catch(err){
-         console.error(err.message);
-        return res.status(500).json({
-            message: "Internal Server Error"
-        });
-    }
-}
+const escapeRegex = (text) =>
+  text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-module.exports = { addUser,findOne,findAll,updateUser,deleteUser };
+const searchUser = async (req, res) => {
+  try {
+    let { search, isActive, role, minAge, maxAge, page, limit, sort, order } = req.query;
+
+    page = Math.max(1, Number(page) || 1);
+    limit = Math.max(1, Number(limit) || 10);
+
+    const query = {};
+
+    if (isActive !== undefined) {
+      query.isActive = isActive === "true";
+    }
+
+    if (role) {
+      query.role = role;
+    }
+
+    if (minAge || maxAge) {
+      query.age = {};
+      if (minAge) query.age.$gte = Number(minAge);
+      if (maxAge) query.age.$lte = Number(maxAge);
+    }
+
+    if (search) {
+      const safeSearch = escapeRegex(search);
+      query.$or = [
+        { name: { $regex: safeSearch, $options: "i" } },
+        { email: { $regex: safeSearch, $options: "i" } }
+      ];
+    }
+
+    const sortOptions = {};
+    const allowedSortFields = ["name", "age", "email", "createdAt"];
+    if (sort && allowedSortFields.includes(sort)) {
+      sortOptions[sort] = order === "desc" ? -1 : 1;
+    }
+
+    const skip = (page - 1) * limit;
+
+    const users = await User.find(query)
+      .sort(sortOptions)
+      .skip(skip)
+      .limit(limit)
+      .lean();
+
+    const total = await User.countDocuments(query);
+
+    res.status(200).json({
+      total,
+      page,
+      totalPages: Math.ceil(total / limit),
+      users
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+module.exports = { addUser,findOne,findAll,updateUser,deleteUser,searchUser };

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {addUser,findOne,findAll,updateUser,deleteUser} = require("../controller/user.controller");
+const {addUser,findOne,findAll,updateUser,deleteUser, searchUser} = require("../controller/user.controller");
 
 
 //post api
@@ -17,7 +17,7 @@ router.post("/update/:id", updateUser);
 router.delete("/delete/:id", deleteUser);
 
 // serach and pagnation api
-router.get("/search", findAll);
+router.get("/user", searchUser);
 
 
 
