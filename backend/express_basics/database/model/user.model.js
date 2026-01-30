@@ -12,6 +12,11 @@ const userSchema = new mongoose.Schema(
       unique: true // ✅ creates unique index automatically
     },
     age: Number,
+    password: {
+      type: String,
+      required: true,
+      select: false // 🔐 important
+    },
     role: {
       type: String,
       default: "user"
