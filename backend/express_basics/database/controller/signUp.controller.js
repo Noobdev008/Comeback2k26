@@ -1,5 +1,6 @@
 const User = require('../model/user.model');
-const bycrpt = require('bcryptjs')
+const bycrpt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const registerUser = async (req,res,next)=>{
     try{
@@ -11,7 +12,7 @@ const registerUser = async (req,res,next)=>{
             });
         };
 
-        const hashedPassword = await bycrpt.hash(password,process.env.SALT);
+        const hashedPassword = await bycrpt.hash(password,+process.env.SALT);
         const signUpUser = await User.create({
             name,email,password:hashedPassword
         });
@@ -30,6 +31,7 @@ const registerUser = async (req,res,next)=>{
 
 const loginUser = async (req,res,next)=>{
     try{
+console.log("test");
 
         let {email,password}= req.body
         if(!email || !password){
@@ -39,6 +41,8 @@ const loginUser = async (req,res,next)=>{
         };
 
         let findUser = await User.findOne({email}).select("+password");
+        console.log(findUser.role, "  find user");
+        
          if (!findUser) {
             return res.status(401).json({ message: "Invalid credentials" });
         }
@@ -49,14 +53,14 @@ const loginUser = async (req,res,next)=>{
 
         const token = jwt.sign({
             id:findUser._id,
-            role:User.findUser.role,
+            role:findUser.role,
         },
        process.env.JWT_SECRET,
-       {exprireIn:"7d"}
+       {expiresIn:"7d"}
     )
 
         return res.status(201).json({
-            message:"User Registerd",
+            message:"User Login",
             token
         });
 
@@ -67,3 +71,5 @@ const loginUser = async (req,res,next)=>{
         });
     }
 }
+
+module.exports={registerUser,loginUser}
