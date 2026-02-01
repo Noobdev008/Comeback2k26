@@ -31,8 +31,6 @@ const registerUser = async (req,res,next)=>{
 
 const loginUser = async (req,res,next)=>{
     try{
-console.log("test");
-
         let {email,password}= req.body
         if(!email || !password){
             return res.status(404).json({
@@ -41,13 +39,12 @@ console.log("test");
         };
 
         let findUser = await User.findOne({email}).select("+password");
-        console.log(findUser.role, "  find user");
         
          if (!findUser) {
             return res.status(401).json({ message: "Invalid credentials" });
         }
 
-        let decryptedPassword = bycrpt.compare(password,findUser.password);
+        let decryptedPassword = await bycrpt.compare(password,findUser.password);
 
         if(!decryptedPassword) {return res.status(401).json({ message: "Invalid credentials" });}
 
