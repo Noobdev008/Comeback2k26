@@ -15,7 +15,11 @@ function App() {
 
   useEffect(()=>{
     console.log("count change : " + count)
-  },[count])
+  },[count]);
+
+  //
+
+  
 
 
   return (
