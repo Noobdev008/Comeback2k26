@@ -20,6 +20,7 @@ const GetUserList = () => {
 
   return (
  <ul>
+ {}
   {users.map((x) => (
     <li key={x._id}>
       <p>ID: {x._id}</p>
