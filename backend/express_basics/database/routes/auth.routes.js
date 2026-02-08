@@ -15,7 +15,7 @@ router.post("/signup",validateUser(signUpSchema),registerUser);
 router.post('/signin',validateUser(signinSchema),loginUser);
 
 //get api
-router.get("/find", findAll);
+router.get("/find",auth, findAll);
 
 //update api
 router.post("/update/:id",auth,authorize("admin"),validateUser(updateSchema), updateUser);

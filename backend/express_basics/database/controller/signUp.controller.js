@@ -58,7 +58,8 @@ const loginUser = async (req,res,next)=>{
 
         return res.status(201).json({
             message:"User Login",
-            token
+            token,
+            role:findUser.role
         });
 
     }catch(err){
