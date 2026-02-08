@@ -4,7 +4,11 @@ const GetUserList = () => {
   const [users, setUser] = useState([]);
 
   useEffect(() => {
-    fetch("/api/find")
+    fetch("/api/find",{
+       headers: {
+       Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+      })
       .then((res) => {
         console.log(res);
         
