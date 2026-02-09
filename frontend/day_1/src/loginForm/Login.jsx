@@ -19,15 +19,14 @@ const Login = () => {
         body: JSON.stringify({email,password}), });
 
         if (!res.ok) {
-  // Read the response as text first to see the HTML error page
-        const errorText = await res.text();
-        console.error("Server Error Response:", errorText);
-        return;
-}
+            // Read the response as text first to see the HTML error page
+            const errorText = await res.text();
+            console.error("Server Error Response:", errorText);
+            return;
+        }
         const data = await res.json();
         console.log(data);
         
-
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
 

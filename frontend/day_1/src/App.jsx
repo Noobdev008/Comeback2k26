@@ -6,13 +6,14 @@ import Login from './loginForm/Login'
 import HomePage from './homePage/HomePage'
 import NavBar from './NavBar/NavBar'
 import { ProtectedRoutes } from './component/ProtectedRoutes'
+import { Signup } from './loginForm/SignUp'
 
 function App() {
   return <>
     <NavBar/>
     <Routes>
       <Route path='/signin' element={<Login/>}/>
-   
+      <Route path='/signup' element={<Signup/>}/>
       <Route path='/' element={ <HomePage/>}/>
       <Route path='/counter' element={<Counter/>}/>
       <Route path='userList' element={<ProtectedRoutes><GetUserList/></ProtectedRoutes>}/>
