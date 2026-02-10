@@ -7,6 +7,7 @@ const NavBar = ()=>(
         <Link to='/signin'>Login</Link>
         <Link to='/userList'>UserList</Link>
         <Link to='/counter'>Counter</Link>
+        <Link to='/updateUser'>UpdateUser</Link>
     </>
 )
 

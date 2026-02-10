@@ -7,6 +7,7 @@ import HomePage from './homePage/HomePage'
 import NavBar from './NavBar/NavBar'
 import { ProtectedRoutes } from './component/ProtectedRoutes'
 import { Signup } from './loginForm/SignUp'
+import { UpdateUser } from './loginForm/UpdateUser'
 
 function App() {
   return <>
@@ -16,6 +17,7 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/' element={ <HomePage/>}/>
       <Route path='/counter' element={<Counter/>}/>
+       <Route path='/updateUser' element={<UpdateUser/>}/>
       <Route path='userList' element={<ProtectedRoutes><GetUserList/></ProtectedRoutes>}/>
     </Routes>
   </>
