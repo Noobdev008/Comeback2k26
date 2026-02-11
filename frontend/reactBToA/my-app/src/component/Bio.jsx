@@ -1,11 +1,16 @@
 function Bio(props){
     return (
         <>
-        <div>
-            <h1>{props.skills}</h1> 
+           <div className="bio-section">
             <p>Age: {props.age}</p> 
             <p>City: {props.city}</p> 
-        </div>
+            <h3>My Technical Skills:</h3>
+            <ol>
+                {props.skills.map((skill) => (
+                <li key={skill.id}>{skill.name}</li>
+                ))}
+            </ol>
+            </div>
         </>
     )
 }
