@@ -7,6 +7,7 @@ import Counter from './component/Counter'
 import { ToggleDarkMode } from './component/ToggleDarkMode'
 import { NameEditor } from './component/NameEditor'
 import { UserForm } from './component/UserForm'
+import { TeamBuilder } from './component/TeamBuilder'
 
 function App() {
 const mySkills = [
@@ -33,6 +34,7 @@ const mySkills = [
 <ToggleDarkMode/>
 <NameEditor/>
 <UserForm/>
+<TeamBuilder/>
       <Footer footer="Footer"/>
     </div>
     </>
