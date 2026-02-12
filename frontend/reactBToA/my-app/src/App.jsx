@@ -3,6 +3,10 @@ import Welcome from './component/Welcome'
 import Header from './component/Header'
 import Footer from './component/Footer'
 import Bio from './component/Bio'
+import Counter from './component/Counter'
+import { ToggleDarkMode } from './component/ToggleDarkMode'
+import { NameEditor } from './component/NameEditor'
+import { UserForm } from './component/UserForm'
 
 function App() {
 const mySkills = [
@@ -25,6 +29,10 @@ const mySkills = [
       age="28"
      skills={mySkills}
 />
+<Counter/>
+<ToggleDarkMode/>
+<NameEditor/>
+<UserForm/>
       <Footer footer="Footer"/>
     </div>
     </>
