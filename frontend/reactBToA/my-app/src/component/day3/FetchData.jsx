@@ -4,8 +4,9 @@ export function FetchData(){
     const [user,setUser]= useState([]);
     const [error, setError] = useState(null);
     const [loading,setLoading]= useState(true);
-    
+
     const getData = async()=>{
+        setLoading(true);
         try {   
             let res= await  fetch("https://jsonplaceholder.typicode.com/users")
             if(!res.ok) throw Error("Something went wrong")
@@ -26,8 +27,11 @@ if (loading) return <h3>Data load ho raha hai, sabr rakho... ⏳</h3>;
 if (error) return <h3>Kuch to gadbad hai daya!</h3>;
     return (<>
             <div>
+            <button onClick={getData}>Refresh Team</button>
+
                 <ul>
-                    {user.map((x)=>
+                {loading?"Loading ... ":
+                    user.map((x)=>
                         <li key={x.id}>{x.name}-{x.email}</li>
                     )}
                 </ul>
