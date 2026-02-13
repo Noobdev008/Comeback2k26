@@ -8,6 +8,8 @@ import { ToggleDarkMode } from './component/ToggleDarkMode'
 import { NameEditor } from './component/NameEditor'
 import { UserForm } from './component/UserForm'
 import { TeamBuilder } from './component/TeamBuilder'
+import { UseEffect } from './component/day3/UseEffect'
+import { FetchData } from './component/day3/FetchData'
 
 function App() {
 const mySkills = [
@@ -35,6 +37,8 @@ const mySkills = [
 <NameEditor/>
 <UserForm/>
 <TeamBuilder/>
+{/* <UseEffect/> */}
+<FetchData/>
       <Footer footer="Footer"/>
     </div>
     </>
