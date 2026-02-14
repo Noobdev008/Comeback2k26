@@ -10,6 +10,7 @@ import { UserForm } from './component/UserForm'
 import { TeamBuilder } from './component/TeamBuilder'
 import { UseEffect } from './component/day3/UseEffect'
 import { FetchData } from './component/day3/FetchData'
+import { ChatWindow } from './component/day4/ChatWindow'
 
 function App() {
 const mySkills = [
@@ -39,6 +40,8 @@ const mySkills = [
 <TeamBuilder/>
 {/* <UseEffect/> */}
 <FetchData/>
+<ChatWindow/>
+
       <Footer footer="Footer"/>
     </div>
     </>
