@@ -9,13 +9,17 @@ export function ChatWindow() {
 
   // Yeh function text lega aur list update karega
 const handleSend = async (userText) => {
+  if (!userText.trim()) return;
+
   const newUserMessage = { role: "user", text: userText };
   setMessages((prev) => [...prev, newUserMessage]);
 
   try {
-    const API_KEY = ""; // Apni poori key dalo
-    // URL ko ek baar dhyaan se check karo
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;;
+    const API_KEY = "xyz..."; 
+    
+    // Using gemini-2.0-flash from your confirmed list
+    // Try gemini-2.5-flash first
+const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
     const response = await fetch(url, {
       method: "POST",
@@ -27,21 +31,19 @@ const handleSend = async (userText) => {
 
     const data = await response.json();
 
-    // ERROR CHECK: Pehle dekho data sahi aaya ya nahi
-    if (data.candidates && data.candidates[0]) {
+    if (response.ok && data.candidates) {
       const botReply = data.candidates[0].content.parts[0].text;
       setMessages((prev) => [...prev, { role: "bot", text: botReply }]);
     } else {
-      // Agar API ne error bheja ho (jaise invalid key)
-      console.error("API Error Response:", data);
-      throw new Error("Invalid API response format");
+      console.error("Error details:", data);
+      throw new Error(data.error?.message || "Response error");
     }
-
   } catch (error) {
     console.error("AI Error:", error);
-    setMessages((prev) => [...prev, { role: "bot", text: "Bhai, API ne dhokha de diya! Check console." }]);
+    setMessages((prev) => [...prev, { role: "bot", text: "Bhai, error aa gaya: " + error.message }]);
   }
 };
+
   return (
     <div style={{ maxWidth: "400px", margin: "20px auto", border: "2px solid #555", borderRadius: "10px", padding: "10px" }}>
       <h2>AI Chat</h2>
@@ -51,5 +53,3 @@ const handleSend = async (userText) => {
   );
 }
 
-
-//
